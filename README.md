@@ -30,7 +30,7 @@ pip install -r requirements.txt
 - If you clone this repo elsewhere, update the `csv_path` in the notebook to your local path.
 
 ### How to run
-1) Open the notebook:
+Option A) Open the notebook:
 
 ```bash
 jupyter notebook StockTradingRL.ipynb
@@ -43,10 +43,20 @@ jupyter notebook StockTradingRL.ipynb
 - Evaluate with a 10% position-sizing policy per action
 - Save charts to `charts/`
 
+Option B) CLI one-liner (no notebook):
+
+```bash
+python generate_charts.py
+```
+
+This will train PPO and save the two charts to `charts/`.
+
 ### Results
-After running, you’ll find:
-- `charts/price_actions.png`: Price with Buy (green ^) and Sell (red v) markers
-- `charts/portfolio_value.png`: Portfolio value (cash + marked-to-market) across steps
+After running, you’ll find and can view these charts below:
+
+![AAPL Price with Buy/Sell Signals (PPO)](charts/price_actions.png)
+
+![Portfolio Value Over Time](charts/portfolio_value.png)
 
 ### Notes on performance and limitations
 - With daily Close-only data and a short training budget (10k steps), performance is typically modest and regime-dependent. In strongly trending periods, buy-and-hold can dominate; in choppy markets, frequent trades may hurt performance.
