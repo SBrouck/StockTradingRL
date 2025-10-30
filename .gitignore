@@ -21,7 +21,5 @@ build/
 dist/
 *.egg-info/
 
-# Results
-charts/*.png
-charts/*.pdf
+# Results (track generated charts in repo)
 
